@@ -1,0 +1,174 @@
+1, Speicific constant type class , cant create object of this class but can use reference, type safety , code readbale, can be used in url api also
+
+--> type of varibales in enum = name of enum
+
+CLASS RELATIONSHIPS :------------
+--> will you use inheritancein real time project
+    --> overloading of unencesssary data of use and no use. eg. attacker attacks and gets some my non use data from base class --> exteded classes are
+          also exploited too.
+     --> use only when fully sure when all proerpties are required
+2. Has a relarionships --> asscociation ( students exists wothoutj adress but viceversa not true) so need of reefremce for address here. If studetn gone then adress gone too.
+   -> using refernce type realtion using objects we establish relarionships
+  type a. (aggreagtion)--> weak reltion} independent classes
+  type b. (composition)--> strong} strongly depedment , class engine as to use some properties from car
+
+3. Dependency ---->
+   -> always write depnendecy in method where it has to be used , no inheritance. In asssociation outsie the function
+    eg. ------------>
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+    
+Class Relationships:w
+
+Class A
+{
+
+}
+Class B
+{
+
+}
+
+Now what can be the possible relationships in the classes (while dealing with
+large projects)?
+
+Types of Relationships:
+1. Inheritence (IS-A relationship)
+
+2. Association (HAS-A) 
+		1. Aggregation 
+		2. Composition
+
+Why we need these relationship?
+1. Code Reusability
+2. Cost minimization in large projects.
+3. Redundancy reduces 
+
+-----------------------------------------------------------------------
+
+1. Inheritence (IS-A relationship)
+Inherting the properties of one class in another class using EXTENDS keyword in Java.
+Except constructor and private members, everything will be inhertited.
+
+Class vehicle 
+{
+
+}
+Class Car EXTENDS Vehicle
+{
+
+}
+
+We can say: Car IS-A Vehicle.
+Here in IS-A relationship classes are tightly coupled meaning, if I change
+anything in parent class, child class properties will also be changed.
+
+--------------------------------------------------------------------------
+
+2. Association (HAS-A) 
+- Commonly used in the large projects as compared to the inheritence.
+eg:
+
+Class Student
+{
+	String name;
+	int roll_no;
+}
+
+The variable are used here are following the HAS-A relationship.
+Student HAS-A name
+Student HAS-A roll_no
+
+eg2:
+
+Class Engine
+{
+
+}
+
+Class Car  
+{
+	Engine e = new Engine();
+}
+from here I can write car HAS-A Engine.
+NOTE: If i extends the engine class to car, which means all the methods will be 
+inherited by car class -> Unnessary overloading of data
+
+But with association, I can create the object of engine class and can use 
+the methods which are only required to use, that is it. -> less overload -> required in large products
+
+- These classes over here are not tightly coupled, i.e., classes are independent of each other.
+
+
+--------------------------------------------------------------------
+
+1. Aggregation 
+-------------------------------------------------------------------------
+- Aggregation is weak bonding
+- If two classes are having aggregation btw them, which means they have weak bonding.
+
+
+Car class, Music_Player class 
+Car HAS Music Player.
+In this case, if there is no music player still we can run car, and if there is no car
+still we can use music player
+
+Car is a container object 
+Music Player here is contained object, if car's existence is deleted, then there is 
+no effect on Music Player. - Weakly coupled 
+
+eg: student HAS laptop
+
+
+
+2. Composition
+---------------------------------------------------------------------------- 
+- Strong bonding
+- If two classes are having Composition btw them, which means they have Strong bonding.
+
+eg: 
+Car class & Engine class
+Engine class is of no use when there is no car, also car without any engine is of no use.
+
+Car is a container object 
+Engine here is contained object, if car's existence is deleted, then engine will 
+also be deleted. - Strongly Coupled
+
+eg: student HAS address
+
+
+
+
+
+
+---------------------------------------------------------------
+3. Dependency (USE-A)
+- If we use a reference of another class inside some other class's method.
+- One class uses another class to perform a specific task.
+
+Achieved by: 
+	- declaring objects inside methods as parameters
+
+eg:
+Class Printer
+{
+	void printDocument(string doc_name)
+		{
+			sout("printing document " + doc_name);
+		}
+}
+
+Class OfficeWork
+{
+	Void doWork()
+		{
+			Printer p = new Printer();
+			p.printDocument("Java Document");
+			p.printDocument("Database Document"); --dependency injection
+		}
+    
+    
+}
+

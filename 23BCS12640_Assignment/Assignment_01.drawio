@@ -1,0 +1,483 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/144.0.0.0 Safari/537.36" version="29.3.6" pages="6">
+  <diagram name="Step 1 - Monolithic" id="step1">
+    <mxGraphModel dx="786" dy="397" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;fontColor=#000000;" value="STEP 1: BASIC MONOLITHIC ARCHITECTURE" vertex="1">
+          <mxGeometry height="40" width="500" x="200" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="browser1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="Web Browser" vertex="1">
+          <mxGeometry height="50" width="150" x="340" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="app1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;align=left;" value="Monolithic Application Server&#xa;&#xa;• User Management&#xa;• Exam Management&#xa;• Question Bank&#xa;• Grading&#xa;• Results" vertex="1">
+          <mxGeometry height="140" width="210" x="310" y="230" as="geometry" />
+        </mxCell>
+        <mxCell id="db1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=14;" value="MySQL Database" vertex="1">
+          <mxGeometry height="80" width="130" x="350" y="430" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1-1" edge="1" parent="1" source="browser1" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;fontSize=12;" target="app1" value="HTTP">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="conn1-2" edge="1" parent="1" source="app1" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="db1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="shortcoming1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=12;verticalAlign=top;" value="SHORTCOMINGS:&lt;br&gt;&lt;br&gt;• Single Point of Failure&lt;br&gt;• Cannot scale horizontally&lt;br&gt;• All users share resources&lt;br&gt;• No real-time updates&lt;br&gt;• Security vulnerabilities&lt;br&gt;• Monolithic codebase" vertex="1">
+          <mxGeometry height="140" width="250" x="580" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="features1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;fontSize=12;verticalAlign=top;" value="FEATURES:&lt;br&gt;&lt;br&gt;• Basic authentication&lt;br&gt;• Exam creation&lt;br&gt;• Question management&lt;br&gt;• Manual grading&lt;br&gt;• Simple results" vertex="1">
+          <mxGeometry height="140" width="250" x="580" y="330" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Step 2 - Load Balanced" id="step2">
+    <mxGraphModel dx="786" dy="397" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;" value="STEP 2: LOAD BALANCED ARCHITECTURE" vertex="1">
+          <mxGeometry height="40" width="500" x="200" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="browser2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="Web Browsers" vertex="1">
+          <mxGeometry height="50" width="150" x="340" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lb2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;align=left;" value="&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;Load Balancer&lt;br&gt;&amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp; &amp;nbsp;(Nginx)&lt;div&gt;&lt;br/&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="100" width="190" x="320" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="app2-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="App Server 1" vertex="1">
+          <mxGeometry height="60" width="110" x="200" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="app2-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="App Server 2" vertex="1">
+          <mxGeometry height="60" width="110" x="360" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="app2-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="App Server 3" vertex="1">
+          <mxGeometry height="60" width="110" x="520" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="db2" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="MySQL Database&#xa;(Primary)" vertex="1">
+          <mxGeometry height="80" width="130" x="350" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2-1" edge="1" parent="1" source="browser2" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="lb2" value="HTTPS">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2-2" edge="1" parent="1" source="lb2" style="endArrow=classic;html=1;exitX=0.2;exitY=1;entryX=0.5;entryY=0;" target="app2-1" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2-3" edge="1" parent="1" source="lb2" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="app2-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="conn2-4" edge="1" parent="1" source="lb2" style="endArrow=classic;html=1;exitX=0.8;exitY=1;entryX=0.5;entryY=0;" target="app2-3" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="improvements2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=12;verticalAlign=top;" value="IMPROVEMENTS:&lt;br&gt;&lt;br&gt;• Traffic distribution&lt;br&gt;• High availability&lt;br&gt;• Horizontal scaling&lt;br&gt;• HTTPS encryption&lt;br&gt;• Automatic failover" vertex="1">
+          <mxGeometry height="130" width="250" x="670" y="120" as="geometry" />
+        </mxCell>
+        <mxCell id="shortcoming2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=12;verticalAlign=top;" value="NEW ISSUES:&lt;br&gt;&lt;br&gt;• Database bottleneck&lt;br&gt;• No caching layer&lt;br&gt;• Static content&amp;nbsp;&lt;br&gt;• DB single point failure" vertex="1">
+          <mxGeometry height="110" width="250" x="670" y="300" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Step 3 - Cache + DB Scale" id="step3">
+    <mxGraphModel dx="873" dy="441" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;" value="STEP 3: CACHING + DATABASE SCALING" vertex="1">
+          <mxGeometry height="40" width="600" x="200" y="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-6" edge="1" parent="1" source="browser3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="lb3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="browser3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=14;" value="Web Browsers" vertex="1">
+          <mxGeometry height="50" width="150" x="340" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="cdn3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;align=left;" value="CDN&#xa;(CloudFront/CloudFlare)&#xa;&#xa;Static Assets" vertex="1">
+          <mxGeometry height="70" width="180" x="80" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-11" edge="1" parent="1" source="lb3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="app3-1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-12" edge="1" parent="1" source="lb3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="app3-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="420" y="275" />
+              <mxPoint x="415" y="275" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-13" edge="1" parent="1" source="lb3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="app3-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lb3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;" value="Load Balancer" vertex="1">
+          <mxGeometry height="50" width="130" x="355" y="200" as="geometry" />
+        </mxCell>
+        <mxCell id="app3-1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="App Server" vertex="1">
+          <mxGeometry height="50" width="100" x="240" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="app3-2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="App Server" vertex="1">
+          <mxGeometry height="50" width="100" x="365" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="app3-3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=12;" value="App Server" vertex="1">
+          <mxGeometry height="50" width="100" x="490" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="redis3" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#fad9d5;strokeColor=#ae4132;fontSize=11;align=left;" value="Redis Cache&#xa;&#xa;• Sessions&#xa;• Frequently used data&#xa;• Exam state" vertex="1">
+          <mxGeometry height="100" width="140" x="150" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="db3-primary" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="MySQL Primary&#xa;(Write)" vertex="1">
+          <mxGeometry height="70" width="120" x="360" y="420" as="geometry" />
+        </mxCell>
+        <mxCell id="db3-replica1" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="Read Replica 1" vertex="1">
+          <mxGeometry height="60" width="100" x="360" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="db3-replica2" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="Read Replica 2" vertex="1">
+          <mxGeometry height="60" width="100" x="480" y="530" as="geometry" />
+        </mxCell>
+        <mxCell id="repl-arrow" edge="1" parent="1" source="db3-primary" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;" target="db3-replica1" value="Replication">
+          <mxGeometry height="50" relative="1" width="50" as="geometry" />
+        </mxCell>
+        <mxCell id="improvements3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=11;verticalAlign=top;" value="IMPROVEMENTS:&lt;br&gt;&lt;br&gt;• CDN for static content&lt;br&gt;• Redis caching layer&lt;br&gt;• DB read replicas&lt;br&gt;• Distributed sessions&lt;br&gt;• Read/write separation&lt;br&gt;• Much faster queries" vertex="1">
+          <mxGeometry height="130" width="220" x="650" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="shortcoming3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=11;verticalAlign=top;" value="REMAINING ISSUES:&lt;br&gt;&lt;br&gt;• Monolithic app&lt;br&gt;• Can&#39;t scale features separately&lt;br&gt;• No real-time features&lt;br&gt;• Synchronous processing&lt;br&gt;• Limited search capability" vertex="1">
+          <mxGeometry height="110" width="220" x="650" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-5" edge="1" parent="1" source="browser3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0.981;entryY=0.362;entryDx=0;entryDy=0;entryPerimeter=0;" target="cdn3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-15" edge="1" parent="1" source="cdn3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.133;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" target="browser3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-16" edge="1" parent="1" source="redis3" style="endArrow=classic;startArrow=classic;html=1;rounded=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" target="app3-2" value="">
+          <mxGeometry height="50" relative="1" width="50" as="geometry">
+            <Array as="points">
+              <mxPoint x="415" y="400" />
+            </Array>
+            <mxPoint x="360" y="450" as="sourcePoint" />
+            <mxPoint x="410" y="400" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-22" edge="1" parent="1" source="app3-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0.669;entryY=-0.002;entryDx=0;entryDy=0;entryPerimeter=0;" target="db3-primary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-23" edge="1" parent="1" source="app3-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.605;entryY=-0.034;entryDx=0;entryDy=0;entryPerimeter=0;" target="db3-replica2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HCuwHLmMveaRbqzj8QSE-24" edge="1" parent="1" source="app3-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0;entryDx=0;entryDy=37.49999999999999;entryPerimeter=0;" target="db3-replica1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Step 4 - Microservices" id="step4">
+    <mxGraphModel dx="749" dy="378" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;" value="STEP 4: MICROSERVICES ARCHITECTURE" vertex="1">
+          <mxGeometry height="40" width="600" x="250" y="20" as="geometry" />
+        </mxCell>
+
+        <!-- Clients (single merged box) -->
+        <mxCell id="clients4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="Clients&#xa;(Web / Mobile / Admin)" vertex="1">
+          <mxGeometry height="60" width="220" x="250" y="80" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway (simplified label) -->
+        <mxCell id="apigw4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" value="API Gateway&#xa;(Auth · Routing · Rate Limit)" vertex="1">
+          <mxGeometry height="55" width="220" x="250" y="190" as="geometry" />
+        </mxCell>
+
+        <!-- Microservices row (4 core services) -->
+        <mxCell id="svc4-user" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="User&#xa;Service" vertex="1">
+          <mxGeometry height="70" width="110" x="60" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="svc4-exam" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Exam&#xa;Service" vertex="1">
+          <mxGeometry height="70" width="110" x="200" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="svc4-question" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Question&#xa;Service" vertex="1">
+          <mxGeometry height="70" width="110" x="340" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="svc4-grading" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Grading +&#xa;Notification" vertex="1">
+          <mxGeometry height="70" width="110" x="480" y="320" as="geometry" />
+        </mxCell>
+
+        <!-- Shared Redis Cache -->
+        <mxCell id="redis4" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fad9d5;strokeColor=#ae4132;fontSize=11;" value="Redis Cache" vertex="1">
+          <mxGeometry height="60" width="100" x="620" y="330" as="geometry" />
+        </mxCell>
+
+        <!-- Per-service DBs (single shared DB icon with label) -->
+        <mxCell id="dbs4" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;" value="Databases&#xa;(one per service)" vertex="1">
+          <mxGeometry height="80" width="180" x="230" y="460" as="geometry" />
+        </mxCell>
+
+        <!-- Edges -->
+        <mxCell id="e4-1" edge="1" parent="1" source="clients4" target="apigw4" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-2" edge="1" parent="1" source="apigw4" target="svc4-user" style="endArrow=classic;html=1;exitX=0.1;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-3" edge="1" parent="1" source="apigw4" target="svc4-exam" style="endArrow=classic;html=1;exitX=0.35;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-4" edge="1" parent="1" source="apigw4" target="svc4-question" style="endArrow=classic;html=1;exitX=0.65;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-5" edge="1" parent="1" source="apigw4" target="svc4-grading" style="endArrow=classic;html=1;exitX=0.9;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-6" edge="1" parent="1" source="svc4-user" target="dbs4" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.15;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-7" edge="1" parent="1" source="svc4-exam" target="dbs4" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.38;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-8" edge="1" parent="1" source="svc4-question" target="dbs4" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.62;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-9" edge="1" parent="1" source="svc4-grading" target="dbs4" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.85;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4-10" edge="1" parent="1" source="svc4-grading" target="redis4" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Info boxes -->
+        <mxCell id="imp4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=11;verticalAlign=top;" value="IMPROVEMENTS:&lt;br&gt;&lt;br&gt;• Each feature scales independently&lt;br&gt;• Failure in one service doesn&#39;t crash all&lt;br&gt;• Teams can work on services separately&lt;br&gt;• Shared cache speeds up reads" vertex="1">
+          <mxGeometry height="110" width="240" x="760" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="sh4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=11;verticalAlign=top;" value="REMAINING ISSUES:&lt;br&gt;&lt;br&gt;• No real-time updates yet&lt;br&gt;• Grading is still synchronous&lt;br&gt;• No file/image storage&lt;br&gt;• No proctoring capability" vertex="1">
+          <mxGeometry height="110" width="240" x="760" y="250" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Step 5 - Event Driven" id="step5">
+    <mxGraphModel dx="786" dy="397" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=18;fontStyle=1;" value="STEP 5: EVENT-DRIVEN + REAL-TIME ARCHITECTURE" vertex="1">
+          <mxGeometry height="40" width="700" x="220" y="20" as="geometry" />
+        </mxCell>
+
+        <!-- Top row: CDN | Clients | WebSocket -->
+        <mxCell id="cdn5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" value="CDN&#xa;(Static Files)" vertex="1">
+          <mxGeometry height="50" width="130" x="60" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="clients5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=13;" value="Clients (Web / Mobile)" vertex="1">
+          <mxGeometry height="50" width="200" x="260" y="90" as="geometry" />
+        </mxCell>
+        <mxCell id="ws5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;fontSize=11;" value="WebSocket Server&#xa;(Real-time Updates)" vertex="1">
+          <mxGeometry height="50" width="170" x="530" y="90" as="geometry" />
+        </mxCell>
+
+        <!-- API Gateway -->
+        <mxCell id="apigw5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=12;fontStyle=1;" value="API Gateway" vertex="1">
+          <mxGeometry height="45" width="200" x="260" y="190" as="geometry" />
+        </mxCell>
+
+        <!-- 4 microservices -->
+        <mxCell id="svc5-a" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="User +&#xa;Exam" vertex="1">
+          <mxGeometry height="65" width="110" x="60" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="svc5-b" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Question +&#xa;Search" vertex="1">
+          <mxGeometry height="65" width="110" x="200" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="svc5-c" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Grading" vertex="1">
+          <mxGeometry height="65" width="110" x="340" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="svc5-d" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Proctoring +&#xa;Notification" vertex="1">
+          <mxGeometry height="65" width="110" x="480" y="300" as="geometry" />
+        </mxCell>
+
+        <!-- Message Queue (Kafka) -->
+        <mxCell id="kafka5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;fontSize=12;fontStyle=1;" value="Message Queue (Kafka)&#xa;Async event processing" vertex="1">
+          <mxGeometry height="55" width="260" x="200" y="430" as="geometry" />
+        </mxCell>
+
+        <!-- Storage row: Databases | Object Storage | Redis -->
+        <mxCell id="dbs5" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=12;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="Databases&#xa;(per service)" vertex="1">
+          <mxGeometry height="70" width="130" x="60" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="store5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Object Storage (S3)&#xa;+ Elasticsearch" vertex="1">
+          <mxGeometry height="70" width="160" x="230" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="redis5" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=10;fillColor=#fad9d5;strokeColor=#ae4132;fontSize=11;" value="Redis Cache" vertex="1">
+          <mxGeometry height="70" width="110" x="430" y="545" as="geometry" />
+        </mxCell>
+        <mxCell id="webrtc5" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;fontSize=11;" value="WebRTC&#xa;(Video Proctoring)" vertex="1">
+          <mxGeometry height="70" width="130" x="580" y="545" as="geometry" />
+        </mxCell>
+
+        <!-- ── Edges ── -->
+        <!-- CDN ↔ Clients -->
+        <mxCell id="e5-cdn" edge="1" parent="1" source="cdn5" target="clients5" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Clients ↔ WebSocket -->
+        <mxCell id="e5-ws" edge="1" parent="1" source="clients5" target="ws5" style="endArrow=classic;startArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Clients → API GW -->
+        <mxCell id="e5-c2gw" edge="1" parent="1" source="clients5" target="apigw5" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- API GW → services -->
+        <mxCell id="e5-gw1" edge="1" parent="1" source="apigw5" target="svc5-a" style="endArrow=classic;html=1;exitX=0.1;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-gw2" edge="1" parent="1" source="apigw5" target="svc5-b" style="endArrow=classic;html=1;exitX=0.37;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-gw3" edge="1" parent="1" source="apigw5" target="svc5-c" style="endArrow=classic;html=1;exitX=0.63;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-gw4" edge="1" parent="1" source="apigw5" target="svc5-d" style="endArrow=classic;html=1;exitX=0.9;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Services → Kafka (fan-in) -->
+        <mxCell id="e5-s2k1" edge="1" parent="1" source="svc5-a" target="kafka5" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.1;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-s2k2" edge="1" parent="1" source="svc5-b" target="kafka5" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.35;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-s2k3" edge="1" parent="1" source="svc5-c" target="kafka5" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.6;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-s2k4" edge="1" parent="1" source="svc5-d" target="kafka5" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.85;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Kafka → Storage -->
+        <mxCell id="e5-k2db" edge="1" parent="1" source="kafka5" target="dbs5" style="endArrow=classic;html=1;exitX=0.15;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-k2s3" edge="1" parent="1" source="kafka5" target="store5" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5-k2r" edge="1" parent="1" source="kafka5" target="redis5" style="endArrow=classic;html=1;exitX=0.85;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Proctoring svc → WebRTC -->
+        <mxCell id="e5-p2v" edge="1" parent="1" source="svc5-d" target="webrtc5" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;dashed=1;">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="535" y="510" />
+              <mxPoint x="645" y="510" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        <!-- Info boxes -->
+        <mxCell id="imp5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=11;verticalAlign=top;" value="IMPROVEMENTS:&lt;br&gt;&lt;br&gt;• Kafka handles tasks in background (async)&lt;br&gt;• WebSockets push live updates to students&lt;br&gt;• S3 stores images/videos cheaply&lt;br&gt;• Elasticsearch enables fast question search&lt;br&gt;• WebRTC enables live video proctoring&lt;br&gt;• Auto-save answers in real time" vertex="1">
+          <mxGeometry height="130" width="240" x="780" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="sh5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=11;verticalAlign=top;" value="REMAINING ISSUES:&lt;br&gt;&lt;br&gt;• Everything runs in one region&lt;br&gt;• No monitoring or alerting yet&lt;br&gt;• Manual backup only" vertex="1">
+          <mxGeometry height="90" width="240" x="780" y="250" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram name="Step 6 - Production Ready" id="step6">
+    <mxGraphModel dx="827" dy="418" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title6" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;fontColor=#000000;" value="STEP 6: PRODUCTION-READY ENTERPRISE ARCHITECTURE" vertex="1">
+          <mxGeometry height="40" width="800" x="250" y="20" as="geometry" />
+        </mxCell>
+
+        <!-- EDGE LAYER (3 grouped boxes) -->
+        <mxCell id="edge-security6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;fontStyle=1;" value="Security Layer&#xa;WAF + DDoS Protection" vertex="1">
+          <mxGeometry height="55" width="170" x="40" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-cdn6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;fontStyle=1;" value="CDN + DNS&#xa;(CloudFront / Route 53)" vertex="1">
+          <mxGeometry height="55" width="170" x="240" y="100" as="geometry" />
+        </mxCell>
+        <mxCell id="edge-lb6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;fontStyle=1;" value="Load Balancer + API Gateway&#xa;(Auto-scaling cluster)" vertex="1">
+          <mxGeometry height="55" width="210" x="440" y="100" as="geometry" />
+        </mxCell>
+
+        <!-- APP LAYER (2 grouped service boxes) -->
+        <mxCell id="app-core6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Core Services&#xa;&#xa;User · Exam · Question · Grading" vertex="1">
+          <mxGeometry height="75" width="200" x="120" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="app-ext6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" value="Extended Services&#xa;&#xa;Notification · Proctoring · Analytics · Reporting" vertex="1">
+          <mxGeometry height="75" width="280" x="350" y="220" as="geometry" />
+        </mxCell>
+
+        <!-- EVENT BUS ROW -->
+        <mxCell id="kafka6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fad7ac;strokeColor=#b46504;fontSize=12;fontStyle=1;" value="Message Queue (Kafka)" vertex="1">
+          <mxGeometry height="50" width="180" x="180" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="ws6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#b1ddf0;strokeColor=#10739e;fontSize=11;fontStyle=1;" value="WebSocket Cluster&#xa;(Real-time sync)" vertex="1">
+          <mxGeometry height="50" width="180" x="400" y="370" as="geometry" />
+        </mxCell>
+
+        <!-- DATA LAYER (one grouped box) -->
+        <mxCell id="data6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" value="Data &amp; Storage Layer&#xa;&#xa;RDS Multi-AZ (Primary + Replicas) · Redis Cluster · S3 (cross-region)&#xa;Elasticsearch · Data Warehouse (Redshift)" vertex="1">
+          <mxGeometry height="80" width="420" x="120" y="490" as="geometry" />
+        </mxCell>
+
+        <!-- DISASTER RECOVERY -->
+        <mxCell id="dr6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;dashed=1;dashPattern=5 5;verticalAlign=top;fontStyle=1;" value="Region 2 – Disaster Recovery&#xa;&#xa;Standby infra · Auto failover&#xa;RTO &lt; 1 hr · RPO &lt; 5 min" vertex="1">
+          <mxGeometry height="80" width="200" x="580" y="490" as="geometry" />
+        </mxCell>
+
+        <!-- MONITORING -->
+        <mxCell id="monitor6" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=11;" value="Observability &amp; Monitoring&#xa;&#xa;Prometheus/Grafana · ELK Logs · Jaeger Tracing · PagerDuty Alerts · APM" vertex="1">
+          <mxGeometry height="65" width="400" x="140" y="620" as="geometry" />
+        </mxCell>
+
+        <!-- ── Edges ── -->
+        <!-- Edge layer internal flow -->
+        <mxCell id="e6-sec2cdn" edge="1" parent="1" source="edge-security6" target="edge-cdn6" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6-cdn2lb" edge="1" parent="1" source="edge-cdn6" target="edge-lb6" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- LB → App services -->
+        <mxCell id="e6-lb2core" edge="1" parent="1" source="edge-lb6" target="app-core6" style="endArrow=classic;html=1;exitX=0.3;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6-lb2ext" edge="1" parent="1" source="edge-lb6" target="app-ext6" style="endArrow=classic;html=1;exitX=0.7;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- App → Event bus -->
+        <mxCell id="e6-core2k" edge="1" parent="1" source="app-core6" target="kafka6" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.3;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6-ext2ws" edge="1" parent="1" source="app-ext6" target="ws6" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Event bus → Data -->
+        <mxCell id="e6-k2data" edge="1" parent="1" source="kafka6" target="data6" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.25;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6-ws2data" edge="1" parent="1" source="ws6" target="data6" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.6;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Data → DR (replication) -->
+        <mxCell id="e6-data2dr" edge="1" parent="1" source="data6" target="dr6" style="endArrow=classic;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;dashed=1;" value="Replication">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <!-- Data → Monitoring -->
+        <mxCell id="e6-data2mon" edge="1" parent="1" source="data6" target="monitor6" style="endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Info boxes -->
+        <mxCell id="feat6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;align=left;fontSize=10;verticalAlign=top;" value="ENTERPRISE FEATURES:&lt;br&gt;&lt;br&gt;• Runs across 2 regions (survives outages)&lt;br&gt;• Auto-scales 2–10 app instances based on load&lt;br&gt;• WAF blocks attacks; CDN speeds up global access&lt;br&gt;• Full monitoring: metrics, logs, tracing, alerts&lt;br&gt;• Data warehouse for deep analytics&lt;br&gt;• AI-powered live proctoring&lt;br&gt;• Supports 100K+ users at once&lt;br&gt;&lt;br&gt;PERFORMANCE:&lt;br&gt;• API responses under 200 ms&lt;br&gt;• Automated backups + point-in-time recovery" vertex="1">
+          <mxGeometry height="200" width="250" x="830" y="80" as="geometry" />
+        </mxCell>
+        <mxCell id="comp6" parent="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;fontSize=10;verticalAlign=top;" value="COMPLIANCE &amp; SECURITY:&lt;br&gt;&lt;br&gt;• GDPR, FERPA, COPPA certified&lt;br&gt;• SOC 2 Type II · ISO 27001&lt;br&gt;• Encryption everywhere (at rest + in transit)&lt;br&gt;• Role-based access control (RBAC)&lt;br&gt;• MFA for all admin accounts&lt;br&gt;• Regular penetration testing" vertex="1">
+          <mxGeometry height="160" width="250" x="830" y="320" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,38 @@
+-- Singleton class ---
+1. What if multiple threads acces the code at a same time
+2. What i sget instance not working , how to prevent ??
+ fo ra single instance ---> Syncronised , volatile.
+
+@Factory design method --->
+1. Similar to open close solid principle
+
+@Abstract fac@tory design---> one more abstraction over factory method , no twann link user to real factory.
+@builder design pattern - OSI packet gradual build
+
+CHAPTER 1.3 
+TOPIC 01: (SOLID Principles)
+
+S: SINGLE RESPONSIBILITY PRINCIPLE 
+O: OPEN/CLOSED PRINCIPLE
+L: LSP (LISKOV'S SUBSTITUTION PRINCIPLE)
+I: INTERFACE SEGEGRATION PRINCIPLE 
+D: DIP: DEPENDENCY INVERSION PRINCIPLE 
+
+
+THIS SOLID: FOUNDATION FOR DESING PATTERNS 
+
+DSA: 
+SYSTEM DESIGN: 
+
+1. CREATIONAL DP:  CREATING THE CORRECT OBJECT (MORE OVERHEAD -> MORE OBJECTS)
+					SINGLETON, FACTORY, ABSTRACT FACTORY, BUILDER
+2. STRUCTURAL DP: DEFINE THE STURUCTURE OF OBJECT / CLASS / INTERFACE 
+					PROXY, FACADE, ETC
+3. BEHAVIORAL DP: HOW IT IS GOING TO BEHAVE? 
+				  HOW OBJECT WILL COMMUNICATE?? 
+				  (OBSERVER, STRATEGY)
+				  
+				  
+				 CONSTRUCTOR CHAINING: 
+				 
+				 METHOD CHAINING: THIS 

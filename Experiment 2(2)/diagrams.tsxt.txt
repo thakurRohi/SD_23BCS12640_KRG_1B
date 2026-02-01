@@ -1,0 +1,60 @@
+1. Use case digrams --->
+   @Prefferd--->
+   "What are we building?" Phase (Requirement Gathering)
+-> functional req are my use cases. use dotted line for communivation.
+   --> eg amazon seeler and head on amazon {geenralised} to client , extend means optional ( eg view the porduct)
+   --> dont show workflow ( like workflows of admin are not shown , there are some use cases and we are only concerned about that )
+   --> we cant draw for large case , cuz we dont show the flows . If getting large divide into different use cases.
+   -> write adv diadv for each and concern with SD
+
+   @ Disadvantages -->
+    1. Lack of tech details
+    2. No sequnce timing
+    3. Over simple
+
+2. Class diagram ( LLD imp)---->
+    @Preffered--->
+    "How do we code it?" Phase (Low-Level Design)
+   -> 1.* = one or more customers are linked to one or more (many to many )
+   @Advs
+   1. Blueprint of code
+   2. DB mapping
+   3. Clarity of relations
+   
+   @Disads
+   1. Miselad for micros ( class diag of whole system feels monolithic)
+   2. Clutter for complex ssytems
+
+3. Sequence diagram --->
+   @Prefferd--->
+   "How do components talk?" Phase (API & Flow)
+   @advs
+   1. Sync vs Async clarity
+   2. Race condn vis
+   
+   @disad
+   1. Becomes too huge for a single service
+   2. Complex mantainance for a single API call
+
+3. Sequende digram - divide into timelines , at whihc time object was acitve(stick like structure) , object not in ready stae always
+4. Activity digram ---->
+   @Preffered --> 
+   1. "Complex Logic" Phase (Algorithms & Concurrency)
+   2. Used for the Checkout Workflow, specifically showing the parallel processing of Inventory Updates and Email Notifications.
+   3. You have a process with many If-Else conditions or Parallel Tasks.
+   @Advs--->
+   1. shows Parallel Processing
+   2. If-Else logic (Decision Diamonds
+   
+   @Disadvs
+   1. High-Level Abstraction: It focuses on "Activities" (actions), not "Objects". It won't tell you which Class or Service is doing the work, just that the work is being done.
+ 
+5. State machine diag---->
+ou are dealing with an entity that changes its status frequently, and you want to prevent bugs (like refunding a cancelled order).
+   @Preffered--->
+   Lifecycle" Phase (Status Management)
+   1. Validates Business Logic: It ensures "Invalid Transitions" are impossible. For example, it visually proves that an Order cannot jump from Created to Shipped without passing through Paid.
+   2. Event-Driven Clarity: Your system uses Kafka. A State diagram clearly maps which Kafka Event (e.g., PaymentSuccess) triggers which State Change (Pending $\to$ Confirmed).
+
+   @Disads--->
+   1. Ignores Data Flow: It tells you that the status changed, but it doesn't tell you how (which API was called, what data was passed).
